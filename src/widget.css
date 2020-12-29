@@ -1,0 +1,38 @@
+:root {
+    --progress-bar-color: {{progressBarColor}};
+    --progress-bar-height: {{progressBarHeight}}px;
+    --progress-bar-width: {{progressBarWidth}}px;
+    --progress-bar-tray-color: {{progressBarTrayColor}};
+    --progress-bar-tray-opacity: {{progressBarTrayOpacity}};
+}
+
+.progress-bar,
+.progress-bar-tray {
+    position: absolute;
+    border-radius: var(--progress-bar-height);
+}
+
+.container {
+    position: relative;
+    width: var(--progress-bar-width);
+    max-width: var(--progress-bar-width);
+}
+
+.progress-bar {
+    background-color: var(--progress-bar-color);
+    width: 50%;
+    max-width: var(--progress-bar-width);
+    height: var(--progress-bar-height);
+    transition: width 1s linear;
+}
+
+.progress-bar-tray {
+    background-color: var(--progress-bar-tray-color);
+    opacity: var(--progress-bar-tray-opacity);
+
+    width: var(--progress-bar-width);
+    max-width: var(--progress-bar-width);
+    height: var(--progress-bar-height);
+
+    filter: drop-shadow({{dropShadowOffsetX}}px {{dropShadowOffsetY}}px {{dropShadowBlurRadius}}px {{dropShadowColor}});
+}

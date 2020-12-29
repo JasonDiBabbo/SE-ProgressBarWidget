@@ -29,9 +29,9 @@ function clean() {
 }
 
 function format() {
-    log('Formatting widget.html|css|js|json');
+    log('Formatting widget.html|js|json');
 
-    return src('dist/widget.{js,html,css,json}')
+    return src('dist/widget.{js,html,json}')
         .pipe(
             prettier({
                 arrowParens: 'always',
