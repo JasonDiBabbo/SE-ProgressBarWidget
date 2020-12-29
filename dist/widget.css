@@ -6,16 +6,16 @@
     --progress-bar-tray-opacity: {{progressBarTrayOpacity}};
 }
 
-.progress-bar,
-.progress-bar-tray {
-    position: absolute;
-    border-radius: var(--progress-bar-height);
-}
-
 .container {
     position: relative;
     width: var(--progress-bar-width);
     max-width: var(--progress-bar-width);
+}
+
+.progress-bar,
+.progress-bar-tray {
+    position: absolute;
+    border-radius: var(--progress-bar-height);
 }
 
 .progress-bar {
