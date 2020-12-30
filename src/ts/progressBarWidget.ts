@@ -10,20 +10,27 @@ export class ProgressBarWidget {
     }
 
     public startCountdown(seconds: number): void {
+        // TODO: Formally encapsulate loading the widget in a method
         this.progressBar.style.width = '100%';
 
-        const intervalStep = 100 / seconds;
-        this.countdownInterval = window.setInterval(() => {
-            const currentWidth = parseInt(this.progressBar.style.width);
+        // Allow one second to pass for the bar to animate to full
+        window.setTimeout(() => {
+            const intervalStep = 100 / seconds;
 
-            if (currentWidth <= 0) {
-                clearInterval(this.countdownInterval);
-                this.countdownInterval = 0;
+            this.countdownInterval = window.setInterval(() => {
+                const currentWidth = parseFloat(this.progressBar.style.width);
 
-                // TODO: Hide the progress bar
-            } else {
-                this.progressBar.style.width = `${currentWidth - intervalStep}%`;
-            }
+                if (currentWidth <= 0) {
+                    clearInterval(this.countdownInterval);
+                    this.countdownInterval = 0;
+
+                    // TODO: Hide the widget. Shrink the bar left to right and then scale to zero the icon/text.
+                } else {
+                    const nextWidth =
+                        currentWidth - intervalStep <= 0 ? 0 : currentWidth - intervalStep;
+                    this.progressBar.style.width = `${nextWidth}%`;
+                }
+            }, 1000);
         }, 1000);
     }
 }

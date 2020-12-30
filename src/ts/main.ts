@@ -5,8 +5,12 @@ declare const SE_API: {
 };
 
 let progressBarWidget: ProgressBarWidget;
+let countdownDuration: number; // Default to one minute
 
-window.addEventListener('onWidgetLoad', () => {
+window.addEventListener('onWidgetLoad', (obj) => {
+    const fieldData = obj['detail']['fieldData'];
+
+    countdownDuration = fieldData.countdownDuration || 60;
     progressBarWidget = new ProgressBarWidget();
 });
 
@@ -14,7 +18,7 @@ window.addEventListener('onEventReceived', (obj) => {
     const listener: string = obj['detail']['listener'];
 
     if (listener === 'cheer-latest') {
-        progressBarWidget.startCountdown(10); // Temporary magic number. configure this in widget.json later
+        progressBarWidget.startCountdown(countdownDuration);
     } else {
         SE_API.resumeQueue();
     }
