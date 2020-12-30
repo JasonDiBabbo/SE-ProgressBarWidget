@@ -7,8 +7,9 @@ var CountdownBarWidget = /** @class */ (function () {
     }
     CountdownBarWidget.prototype.startCountdown = function (seconds) {
         var _this = this;
-        // TODO: Formally encapsulate loading the widget in a method
-        this.countdownBar.style.width = '100%';
+        if (!this.visible) {
+            this.showWidget();
+        }
         // Allow one second to pass for the bar to animate to full
         window.setTimeout(function () {
             var intervalStep = 100 / seconds;
@@ -17,7 +18,7 @@ var CountdownBarWidget = /** @class */ (function () {
                 if (currentWidth <= 0) {
                     clearInterval(_this.countdownInterval);
                     _this.countdownInterval = 0;
-                    // TODO: Hide the widget. Shrink the bar left to right and then scale to zero the icon/text.
+                    _this.hideWidget();
                 } else {
                     var nextWidth =
                         currentWidth - intervalStep <= 0 ? 0 : currentWidth - intervalStep;
@@ -25,6 +26,14 @@ var CountdownBarWidget = /** @class */ (function () {
                 }
             }, 1000);
         }, 1000);
+    };
+    CountdownBarWidget.prototype.showWidget = function () {
+        this.visible = true;
+        this.countdownBar.style.width = '100%';
+    };
+    CountdownBarWidget.prototype.hideWidget = function () {
+        this.visible = false;
+        // TODO: Hide the widget. Shrink the bar left to right and then scale to zero the icon/text.
     };
     return CountdownBarWidget;
 })();

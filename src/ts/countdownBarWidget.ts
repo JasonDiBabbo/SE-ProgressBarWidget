@@ -10,8 +10,9 @@ export class CountdownBarWidget {
     }
 
     public startCountdown(seconds: number): void {
-        // TODO: Formally encapsulate loading the widget in a method
-        this.countdownBar.style.width = '100%';
+        if (!this.visible) {
+            this.showWidget();
+        }
 
         // Allow one second to pass for the bar to animate to full
         window.setTimeout(() => {
@@ -24,7 +25,7 @@ export class CountdownBarWidget {
                     clearInterval(this.countdownInterval);
                     this.countdownInterval = 0;
 
-                    // TODO: Hide the widget. Shrink the bar left to right and then scale to zero the icon/text.
+                    this.hideWidget();
                 } else {
                     const nextWidth =
                         currentWidth - intervalStep <= 0 ? 0 : currentWidth - intervalStep;
@@ -32,5 +33,16 @@ export class CountdownBarWidget {
                 }
             }, 1000);
         }, 1000);
+    }
+
+    private showWidget(): void {
+        this.visible = true;
+
+        this.countdownBar.style.width = '100%';
+    }
+
+    private hideWidget(): void {
+        this.visible = false;
+        // TODO: Hide the widget. Shrink the bar left to right and then scale to zero the icon/text.
     }
 }
