@@ -1,6 +1,6 @@
-# Progress Bar Widget
+# Countdown Bar Widget
 
-This is a custom implementation of a progress bar widget for use on the [StreamElements](https://streamelements.com) platform. Streamers can use this widget to display progress information to their viewers.
+This is a custom implementation of a countdown bar widget for use on the [StreamElements](https://streamelements.com) platform. Streamers can use this widget to display countdown information to their viewers.
 
 If you're new to the StreamElements platform and/or have any questions about custom widgets, check out [this](https://blog.streamelements.com/how-can-you-become-a-code-guru-87071f223e1b) blog post.
 

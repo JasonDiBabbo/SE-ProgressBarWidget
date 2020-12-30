@@ -42,37 +42,37 @@
         "min": 1,
         "step": 1
     },
-    "progressBarHeight": {
+    "countdownBarHeight": {
         "group": "BAR DIMENSIONS",
-        "label": "Progress Bar Height (px)",
+        "label": "Countdown Bar Height (px)",
         "type": "number",
-        "value": 0,
+        "value": 6,
         "min": 0,
         "step": 1
     },
-    "progressBarWidth": {
+    "countdownBarWidth": {
         "group": "BAR DIMENSIONS",
-        "label": "Progress Bar Width (px)",
+        "label": "Countdown Bar Width (px)",
         "type": "number",
-        "value": 0,
+        "value": 500,
         "min": 0,
         "step": 1
     },
-    "progressBarColor": {
+    "countdownBarColor": {
         "group": "BAR COLORS",
-        "label": "Progress bar color",
+        "label": "Countdown bar color",
         "type": "colorpicker",
         "value": "#2975EF"
     },
-    "progressBarTrayColor": {
+    "countdownBarTrayColor": {
         "group": "BAR COLORS",
-        "label": "Progress bar tray color",
+        "label": "Countdown bar tray color",
         "type": "colorpicker",
         "value": "#4F4F4F"
     },
-    "progressBarTrayOpacity": {
+    "countdownBarTrayOpacity": {
         "group": "BAR COLORS",
-        "label": "Progress bar tray opacity",
+        "label": "Countdown bar tray opacity",
         "type": "number",
         "value": 1,
         "min": 0,
@@ -105,7 +105,7 @@
     },
     "dropShadowColor": {
         "group": "BAR SHADOW",
-        "label": "Shadow color",
+        "label": "Drop shadow color",
         "type": "colorpicker",
         "value": "#303030"
     },

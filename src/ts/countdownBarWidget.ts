@@ -1,24 +1,24 @@
-export class ProgressBarWidget {
+export class CountdownBarWidget {
     public visible = false;
 
     private countdownInterval: number;
 
-    private progressBar: HTMLElement;
+    private countdownBar: HTMLElement;
 
     constructor() {
-        this.progressBar = document.querySelector('.progress-bar');
+        this.countdownBar = document.querySelector('.countdown-bar');
     }
 
     public startCountdown(seconds: number): void {
         // TODO: Formally encapsulate loading the widget in a method
-        this.progressBar.style.width = '100%';
+        this.countdownBar.style.width = '100%';
 
         // Allow one second to pass for the bar to animate to full
         window.setTimeout(() => {
             const intervalStep = 100 / seconds;
 
             this.countdownInterval = window.setInterval(() => {
-                const currentWidth = parseFloat(this.progressBar.style.width);
+                const currentWidth = parseFloat(this.countdownBar.style.width);
 
                 if (currentWidth <= 0) {
                     clearInterval(this.countdownInterval);
@@ -28,7 +28,7 @@ export class ProgressBarWidget {
                 } else {
                     const nextWidth =
                         currentWidth - intervalStep <= 0 ? 0 : currentWidth - intervalStep;
-                    this.progressBar.style.width = `${nextWidth}%`;
+                    this.countdownBar.style.width = `${nextWidth}%`;
                 }
             }, 1000);
         }, 1000);
