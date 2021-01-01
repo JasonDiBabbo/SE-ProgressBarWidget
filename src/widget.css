@@ -1,38 +1,51 @@
 :root {
-    --countdown-bar-color: {{countdownBarColor}};
     --countdown-bar-height: {{countdownBarHeight}}px;
     --countdown-bar-width: {{countdownBarWidth}}px;
+
     --countdown-bar-tray-color: {{countdownBarTrayColor}};
     --countdown-bar-tray-opacity: {{countdownBarTrayOpacity}};
-}
 
-.container {
-    position: relative;
-    width: var(--countdown-bar-width);
-    max-width: var(--countdown-bar-width);
-}
+    --countdown-bar-timer-color: {{countdownBarTimerColor}};
 
-.countdown-bar,
-.countdown-bar-tray {
-    position: absolute;
-    border-radius: var(--countdown-bar-height);
+    --countdown-bar-shadow-x: {{dropShadowOffsetX}}px;
+    --countdown-bar-shadow-y: {{dropShadowOffsetY}}px;
+    --countdown-bar-shadow-blur: {{dropShadowBlurRadius}}px;
+    --countdown-bar-shadow-color: {{dropShadowColor}};
 }
 
 .countdown-bar {
-    background-color: var(--countdown-bar-color);
-    width: 50%;
-    max-width: var(--countdown-bar-width);
+    position: relative;
+    width: var(--countdown-bar-width);
     height: var(--countdown-bar-height);
-    transition: width 1s linear;
+}
+
+.countdown-bar-tray,
+.countdown-bar-timer {
+    position: absolute;
+    border-radius: var(--countdown-bar-height);
 }
 
 .countdown-bar-tray {
     background-color: var(--countdown-bar-tray-color);
     opacity: var(--countdown-bar-tray-opacity);
 
-    width: var(--countdown-bar-width);
     max-width: var(--countdown-bar-width);
+    width: 0%;
     height: var(--countdown-bar-height);
 
-    filter: drop-shadow({{dropShadowOffsetX}}px {{dropShadowOffsetY}}px {{dropShadowBlurRadius}}px {{dropShadowColor}});
+    transition: width 1s ease-in-out;
+    filter: drop-shadow(
+        var(--countdown-bar-shadow-x) var(--countdown-bar-shadow-y) var(--countdown-bar-shadow-blur)
+            var(--countdown-bar-shadow-color)
+    );
+}
+
+.countdown-bar-timer {
+    background-color: var(--countdown-bar-timer-color);
+
+    max-width: var(--countdown-bar-width);
+    width: 0%;
+    height: var(--countdown-bar-height);
+
+    transition: width 1s linear;
 }

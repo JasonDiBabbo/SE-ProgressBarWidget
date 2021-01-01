@@ -1,12 +1,12 @@
 {
     "fontFamily": {
-        "group": "TEXT OPTIONS",
+        "group": "Text Options",
         "type": "googleFont",
         "label": "Font family",
         "value": "Montserrat"
     },
     "fontSize": {
-        "group": "TEXT OPTIONS",
+        "group": "Text Options",
         "label": "Font size (px)",
         "type": "number",
         "value": 30,
@@ -14,13 +14,13 @@
         "step": 1
     },
     "fontColor": {
-        "group": "TEXT OPTIONS",
+        "group": "Text Options",
         "label": "Font color",
         "type": "colorpicker",
         "value": "#FFFFFF"
     },
     "fontWeight": {
-        "group": "TEXT OPTIONS",
+        "group": "Text Options",
         "label": "Font weight",
         "type": "dropdown",
         "options": {
@@ -35,7 +35,7 @@
         "value": "400"
     },
     "countdownDuration": {
-        "group": "COUNTDOWN OPTIONS",
+        "group": "Countdown Options",
         "label": "Countdown Duration (s)",
         "type": "number",
         "value": 1,
@@ -43,36 +43,36 @@
         "step": 1
     },
     "countdownBarHeight": {
-        "group": "BAR DIMENSIONS",
-        "label": "Countdown Bar Height (px)",
+        "group": "Bar Dimensions",
+        "label": "Countdown bar height (px)",
         "type": "number",
         "value": 6,
         "min": 0,
         "step": 1
     },
     "countdownBarWidth": {
-        "group": "BAR DIMENSIONS",
-        "label": "Countdown Bar Width (px)",
+        "group": "Bar Dimensions",
+        "label": "Bar width (px)",
         "type": "number",
         "value": 500,
         "min": 0,
         "step": 1
     },
-    "countdownBarColor": {
-        "group": "BAR COLORS",
-        "label": "Countdown bar color",
+    "countdownBarTimerColor": {
+        "group": "Bar Colors",
+        "label": "Bar timer color",
         "type": "colorpicker",
         "value": "#2975EF"
     },
     "countdownBarTrayColor": {
-        "group": "BAR COLORS",
-        "label": "Countdown bar tray color",
+        "group": "Bar Colors",
+        "label": "Bar tray color",
         "type": "colorpicker",
         "value": "#4F4F4F"
     },
     "countdownBarTrayOpacity": {
-        "group": "BAR COLORS",
-        "label": "Countdown bar tray opacity",
+        "group": "Bar Colors",
+        "label": "Bar tray opacity",
         "type": "number",
         "value": 1,
         "min": 0,
@@ -80,37 +80,37 @@
         "step": 0.1
     },
     "dropShadowOffsetX": {
-        "group": "BAR SHADOW",
-        "label": "Drop shadow x-offset (px)",
+        "group": "Bar shadow",
+        "label": "Shadow x-offset (px)",
         "type": "number",
         "value": 0,
         "min": 0,
         "step": 1
     },
     "dropShadowOffsetY": {
-        "group": "BAR SHADOW",
-        "label": "Drop shadow y-offset (px)",
+        "group": "Bar shadow",
+        "label": "Shadow y-offset (px)",
         "type": "number",
         "value": 0,
         "min": 0,
         "step": 1
     },
     "dropShadowBlurRadius": {
-        "group": "BAR SHADOW",
-        "label": "Drop shadow blur radius (px)",
+        "group": "Bar shadow",
+        "label": "Shadow blur radius (px)",
         "type": "number",
         "value": 0,
         "min": 0,
         "step": 1
     },
     "dropShadowColor": {
-        "group": "BAR SHADOW",
-        "label": "Drop shadow color",
+        "group": "Bar shadow",
+        "label": "Shadow color",
         "type": "colorpicker",
         "value": "#303030"
     },
     "widgetDuration": {
-        "group": "MISC.",
+        "group": "Misc.",
         "label": "Event queue wait time (s)",
         "type": "number",
         "value": 5,
