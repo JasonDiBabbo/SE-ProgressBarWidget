@@ -1,25 +1,21 @@
 import { CountdownBarWidget } from './countdownBarWidget';
 
-declare const SE_API: {
-    resumeQueue: () => void;
-};
-
 let countdownBarWidget: CountdownBarWidget;
-let countdownDuration: number; // Default to one minute
 
 window.addEventListener('onWidgetLoad', (obj) => {
     const fieldData = obj['detail']['fieldData'];
 
-    countdownDuration = fieldData.countdownDuration || 60;
-    countdownBarWidget = new CountdownBarWidget();
+    const countdownDuration = fieldData.countdownDuration || 60;
+    countdownBarWidget = new CountdownBarWidget(countdownDuration);
 });
 
 window.addEventListener('onEventReceived', (obj) => {
     const listener: string = obj['detail']['listener'];
 
-    if (listener === 'cheer-latest') {
-        countdownBarWidget.startCountdown(countdownDuration);
-    } else {
-        SE_API.resumeQueue();
+    // We only care about the latest cheer event
+    if (listener !== 'cheer-latest') {
+        return;
     }
+
+    countdownBarWidget.countdown();
 });
